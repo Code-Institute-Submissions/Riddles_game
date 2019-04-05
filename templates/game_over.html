@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Riddle-game">
+        <meta name="keywords" content="Python,riddle-me-this ">
+        <meta name="author" content="Mariusz Brozda">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Riddle-me-game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="static/js/script.js"></script>
+    </head>
+ <body>
+     
+<!---------------------------------------------- HEADER  -->
+    
+     <header class='row'>
+          <h1>GAME OVER </h1>  
+    </header>
+    
+<!---------------------------------------------- CONTENT  -->
+
+    <section class='container-fluid'>
+            <div class='row'>
+                <div class='col-xs-1 col-sm-1 col-md-4'></div>
+                <div class='player col-xs-10 col-sm-10 col-md-4'>
+                    <h1> {{user}} {{user_points}} PTS  </h1>
+                </div>
+                <div class='col-xs-1 col-sm-1 col-md-4'> </div>
+            </div>
+    </section>
+    
+
+    
+<!---------------------------------------------- FOOTER  -->
+
+    <footer class='footer_index col-xs-12 col-sm-12 col-md-12'>
+        <p> Copyrights Mariusz Brozda &#169; </p>
+    </footer>
+</body>
+</html>
+
