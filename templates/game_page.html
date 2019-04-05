@@ -134,9 +134,11 @@
                 <div class='wrong-answers col-xs-12 col-sm-12 col-md-4'>
                     <h4>WRONG ANSWERS:</h4>
                     <ul>
-                        
-                        
-                        
+                         {% for wrong_answers in wrong_answers %}
+                        <li>
+                            <p id='wrong-answers'> {{wrong_answers}}</p>
+                        </li> 
+                        {% endfor %}
                     </ul>   
                 </div>
                 <div class="col-md-2"></div>

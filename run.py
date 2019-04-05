@@ -20,7 +20,7 @@ def write_to_file(filename, data):
 
 # add user's answer to file with wrong answers
 def add_user_answers(username, answer, correct_answer):
-    write_to_file("data/user_answers.json", "{0} - {1}    ( Correct - {2} )\n".format(
+    write_to_file("data/user_answers.txt", "{0} - {1}    ( Correct - {2} )\n".format(
                                     username, answer, correct_answer))
 
 
@@ -28,7 +28,7 @@ def add_user_answers(username, answer, correct_answer):
 #  Function to get/read answers from the file (last five)
 def get_user_answers():
     wrong_answers = []
-    with open("data/user_answers.json", "r+") as wrong_answer:
+    with open("data/user_answers.txt", "r+") as wrong_answer:
         wrong_answers = wrong_answer.readlines()
     return wrong_answers[-5:]
 
