@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Riddle-game">
+        <meta name="keywords" content="Python,riddle-me-this ">
+        <meta name="author" content="Mariusz Brozda">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Riddle-me-game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="static/js/script.js"></script>
+    </head>
+    <body>
+<!---------------------------------------------- HEADER -->        
+
+        <header class='row'>
+          <h1>WELCOME IN RIDDLE GAME </h1>  
+        </header>
+
+<!---------------------------------------------- CONTENT  -->
+
+        <section class='container-fluid'>
+            <div class='row'>
+                <div class='col-xs-1 col-sm-1 col-md-4'></div>
+
+<!------------------------------------------------PLAYER AND POINTS -->
+                
+                <div class='player col-xs-10 col-sm-10 col-md-4'>
+                    <h1 >PLAYER : {{user}} {{user_points}}  PTS </h1>
+                </div>
+                <div class='col-xs-1 col-sm-1 col-md-4'> </div>
+            </div>
+            <div class='row'>
+                <div class="col-xs-12 col-sm-12 col-md-2"></div>
+                <div class='question col-xs-12 col-sm-12  col-md-8'>
+                    
+                    
+                    
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2"></div>
+            </div>
+
+<!---------------------------------------------- RIDDLES  -->
+
+            <div class='row'>
+                <div class='col-xs-12 col-sm-12 col-md-2'></div>
+                <div class='question col-xs-12 col-sm-12 col-md-8'>
+                    <h4 >{{ riddle_data[riddles]["description"] }}
+                    </h4>  
+                </div>
+                <div class='col-xs-12 col-sm-12 col-md-2'></div>
+            </div>
+        </section>
+        
+
+<!-------------------------------------------------- USER ANSWERS -->
+
+                    <div class'col-xs-8 col-sm-8 col-md-4 form_answer'>
+                        <form method="POST"  class='form-answer'> 
+                            <label>ANSWER</label> <input method="POST"  class='input-answers'  type="text" id="user-answer"  name="user-answer" >
+                            <input type="hidden" name="riddles_track" id="riddles_track" value="{{riddles}}">
+                            <input type="hidden" name="question_nr" id="question_nr" value="{{question_nr }}">
+                            <input type="hidden" name="user_points" id="user_points" value="{{user_points}}">
+                            <button type="submit" class='send-btn'  >SEND!</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                <div class="col-xs-2 col-md-4 col-sm-2"></div>
+            </div>   
+        </section>
+        
+<!---------------------------------------------- USERS RANKING  -->
+
+        <section class="container-fluid">
+            <div class='row'>
+                <div class="col-md-2"></div>
+                <div class='users-ranking  col-xs-12 col-sm-12 col-md-4'>
+                    <h4>USER'S RANKING:</h4>
+                    <ul>
+                     
+                     
+                     
+                     
+                    </ul>
+                </div>
+                
+<!-- -------------------------------------------- WRONG ANSWERS  -->
+
+                <div class='wrong-answers col-xs-12 col-sm-12 col-md-4'>
+                    <h4>WRONG ANSWERS:</h4>
+                    <ul>
+                        
+                        
+                        
+                    </ul>   
+                </div>
+                <div class="col-md-2"></div>
+            </div> 
+        </section>
+    </body>
+    
+<!-- ------------------------------------------- FOOTER-------  -->
+
+    <footer class='footer col-xs-12 col-sm-12 col-md-12'>
+         <p> Copyrights Mariusz Brozda &#169; </p>
+    </footer>
+</html>
