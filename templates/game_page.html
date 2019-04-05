@@ -37,9 +37,14 @@
             <div class='row'>
                 <div class="col-xs-12 col-sm-12 col-md-2"></div>
                 <div class='question col-xs-12 col-sm-12  col-md-8'>
+                    {% if last_question %}
+                    {% else %}
                     
-                    
-                    
+<!---------------------------------------------- QUESTION NR  -->
+
+                    <h3 ><strong>QUESTION : {{question_nr }} </strong>
+                    </h3>  
+                    {% endif %}
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-2"></div>
             </div>
@@ -56,7 +61,42 @@
             </div>
         </section>
         
+<!---------------------------------------------- FLASH MESSAGES  -->
 
+        <section class="container-fluid">
+            <div class='row'>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                                <div class="col-xs-1 col-md-4 col-sm-1 "> </div>
+                                <div class="{{category}}  col-xs-10 col-md-4 col-sm-10  alert error alert-dismissible" role="alert">
+                                                                      {{ message }}
+                                </div>
+                                 <div class="col-xs-1 col-md-4 col-sm-1"> </div>
+                                {% elif category == 'success' %}
+                                <div class="col-xs-1 col-md-4 col-sm-1"> </div>
+                                <div class="{{category}} col-xs-10 col-md-4 col-sm-10 alert success alert-dismissible" role="alert">
+                                                                      {{ message }}
+                                </div>
+                                <div class="col-xs-1 col-md-4 col-sm-1"> </div>
+                                 {% elif category == 'info' %}
+                                <div class="col-xs-1 col-md-4 col-sm-1"> </div>
+                                <div class="{{category}} col-xs-10 col-md-4 col-sm-10 alert info alert-dismissible" role="alert">
+                                                                      {{ message }}
+                                </div>
+                                <div class="col-xs-1 col-md-4 col-sm-1"> </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %} 
+            </div>
+            <div class='row'>
+                <div class="col-xs-2 col-md-4 col-sm-2"> </div>
+                    {% if last_question %}
+                    <a class="play_again_btn btn btn-success btn-lg btn-block col-xs-12 col-sm-12 col-md-4"  href={{ url_for("game_over") }}  >Go to ranking</a>
+                    {% else  %}
+                
 <!-------------------------------------------------- USER ANSWERS -->
 
                     <div class'col-xs-8 col-sm-8 col-md-4 form_answer'>
