@@ -34,7 +34,29 @@
             </div>
     </section>
     
+<!---------------------------------------------- USERS RANKING  -->
 
+    <section class="container-fluid">
+            <div class='row'>
+                <div class="col-md-2 col-xs-1 col-sm-1"></div>
+                <div class='users-ranking  col-xs-10 col-sm-10 col-md-8'>
+                    <h4>USER'S RANKING</h4>
+                    <ul>
+                     {%for online_users in online_users %}
+                        <li>
+                            <p>{{online_users}} </p>
+                        </li>
+                      {% endfor %}
+                       
+                    </ul>
+                </div>
+                <div class="col-md-2 col-xs-1 col-sm-1"> </div>
+            </div>
+            <div class='player col-xs-12 col-sm-12 col-md-12'>
+                     <a class="play_again_btn btn btn-success btn-lg btn-block col-xs-12 col-sm-12 col-md-4"  href={{ url_for('log_in') }}  >Click to Play Again!</a>
+            </div>
+    </section>
+    
     
 <!---------------------------------------------- FOOTER  -->
 

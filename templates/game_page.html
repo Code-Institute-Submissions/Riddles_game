@@ -121,10 +121,11 @@
                 <div class='users-ranking  col-xs-12 col-sm-12 col-md-4'>
                     <h4>USER'S RANKING:</h4>
                     <ul>
-                     
-                     
-                     
-                     
+                        {%for online_users in online_users %}
+                        <li>
+                            <p>{{online_users}} </p>
+                        </li>
+                      {% endfor %}
                     </ul>
                 </div>
                 
